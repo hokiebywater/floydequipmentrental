@@ -277,3 +277,35 @@ a{
                 grid-template-columns: 1fr;
             }
         }
+/* =========================================
+   CURRENT EQUIPMENT
+========================================= */
+
+.equipment-panel{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.equipment-photo img{
+    width:100%;
+    border-radius:18px;
+}
+
+.equipment-details ul{
+    margin:20px 0;
+    padding-left:20px;
+}
+
+.equipment-details li{
+    margin-bottom:10px;
+}
+
+@media(max-width:900px){
+
+    .equipment-panel{
+        grid-template-columns:1fr;
+    }
+
+}
