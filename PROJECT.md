@@ -2,7 +2,7 @@
 
 ## Mission
 
-Build the most professional equipment rental website in Southwest Virginia.
+Build the most professional equipment rental website in Southwest Virginia. Every page should make it easier for customers to choose, reserve, and confidently use professional equipment.
 
 The website should feel premium, trustworthy, modern, and easy to use.
 

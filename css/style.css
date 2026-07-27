@@ -78,8 +78,10 @@ a {
   background: rgba(12, 20, 18, 0.55);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.20);
-  transition: background 0.25s ease, transform 0.25s ease;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
 .brand {
@@ -116,7 +118,9 @@ a {
   font-weight: 600;
   padding: 0.35rem 0;
   border-bottom: 2px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .nav-links a:hover,
@@ -174,7 +178,10 @@ a {
   font-weight: 700;
   letter-spacing: 0.02em;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
 }
 
 .hero-button:hover,
@@ -252,18 +259,82 @@ a {
 
 .equipment-panel {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   gap: 2.5rem;
-  align-items: center;
+  align-items: start;
   background: #fff;
-  border-radius: 24px;
-  padding: 2.4rem;
-  box-shadow: 0 20px 50px rgba(21, 32, 43, 0.08);
+  border-radius: 28px;
+  padding: 2.8rem;
+  box-shadow: 0 22px 60px rgba(21, 32, 43, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.equipment-panel:hover {
+  transform: translateY(-4px);
+}
+
+.equipment-visual {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.equipment-photo {
+  background: #f7f3ed;
+  border-radius: 28px;
+  padding: 1rem;
 }
 
 .equipment-photo img {
-  border-radius: 20px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.12);
+}
+
+.spec-block {
+  background: rgba(23, 49, 38, 0.05);
+  border: 1px solid rgba(23, 49, 38, 0.08);
+  border-radius: 24px;
+  padding: 1.75rem;
+}
+
+.spec-label {
+  display: inline-block;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.spec-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.spec-list div {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(23, 49, 38, 0.1);
+}
+
+.spec-list div:last-child {
+  border-bottom: none;
+}
+
+.spec-list dt {
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.spec-list dd {
+  margin: 0.25rem 0 0;
+  color: var(--gray);
+  line-height: 1.7;
 }
 
 .equipment-details {
@@ -281,6 +352,47 @@ a {
   letter-spacing: 0.04em;
   font-size: 0.85rem;
   text-transform: uppercase;
+}
+
+.equipment-cta {
+  margin-top: 2rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+  padding: 1.15rem 1.75rem;
+  font-size: 1rem;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 0;
+}
+
+.benefit-card {
+  padding: 1.5rem 1.4rem;
+  border-radius: 20px;
+  background: #f8f5f0;
+  border: 1px solid rgba(23, 49, 38, 0.08);
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.benefit-card h4 {
+  margin-bottom: 0.9rem;
+  font-size: 1.05rem;
+  color: var(--dark);
+}
+
+.benefit-card p {
+  margin: 0;
+  color: var(--gray);
+  line-height: 1.75;
 }
 
 .equipment-details h2 {
@@ -324,7 +436,9 @@ a {
   padding: 2rem;
   border-radius: 18px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .why-card:hover {
@@ -349,7 +463,9 @@ a {
   border-radius: 24px;
   padding: 2rem;
   box-shadow: 0 16px 45px rgba(21, 32, 43, 0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .info-panel:hover,
@@ -478,30 +594,6 @@ a {
   }
 }
 
-.equipment-photo {
-  width: 100%;
-}
-
-.equipment-photo img {
-  width: 100%;
-  display: block;
-  border-radius: 16px;
-}
-
-.equipment-details {
-  margin: 0;
-  padding-left: 0;
-}
-
-.equipment-details li {
-  margin-bottom: 10px;
-}
-
-@media (max-width: 900px) {
-  .equipment-panel {
-    grid-template-columns: 1fr;
-  }
-}
 /* ==========================================
    WHY RENT FROM US
 ========================================== */
@@ -592,113 +684,4 @@ a {
 
 .menu-toggle {
   display: none;
-}
-.equipment-intro {
-  max-width: 700px;
-  margin-top: 1rem;
-  color: var(--gray);
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-.equipment-badge {
-  display: inline-block;
-
-  background: rgba(217, 107, 31, 0.12);
-
-  color: var(--orange);
-
-  font-weight: 700;
-
-  padding: 0.45rem 0.9rem;
-
-  border-radius: 999px;
-
-  margin-bottom: 1rem;
-
-  letter-spacing: 0.04em;
-
-  font-size: 0.85rem;
-
-  text-transform: uppercase;
-}
-.equipment-details h2 {
-  font-size: 2.2rem;
-  margin: 0.5rem 0 1rem;
-}
-
-.equipment-details p {
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-}
-
-.feature-list li {
-  margin-bottom: 0.8rem;
-  font-size: 1.05rem;
-}
-
-
-/* ===== Version 2 Polish ===== */
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  line-height:1.6;
-}
-
-.hero-button,
-.reserve-button{
-  letter-spacing:.02em;
-}
-
-.hero-button{
-  padding:1rem 1.75rem;
-}
-
-.hero-button:hover,
-.reserve-button:hover{
-  filter:brightness(1.05);
-}
-
-.section-heading{
-  margin-bottom:3rem;
-}
-
-.equipment-panel{
-  background:#fff;
-  border-radius:24px;
-  padding:2rem;
-  box-shadow:0 20px 50px rgba(21,32,43,.08);
-}
-
-.equipment-photo img{
-  border-radius:20px;
-  box-shadow:0 18px 40px rgba(0,0,0,.18);
-}
-
-.equipment-details h3{
-  margin-top:1.75rem;
-  margin-bottom:.75rem;
-  color:var(--green);
-}
-
-.info-panel,
-.contact-panel,
-.why-card{
-  transition:transform .25s ease, box-shadow .25s ease;
-}
-
-.info-panel:hover,
-.contact-panel:hover,
-.why-card:hover{
-  box-shadow:0 20px 45px rgba(21,32,43,.12);
-}
-
-.contact-panel{
-  text-align:center;
-}
-
-.contact-panel .hero-button{
-  margin-top:1.5rem;
 }
