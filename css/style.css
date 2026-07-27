@@ -685,3 +685,131 @@ a {
 .menu-toggle {
   display: none;
 }
+
+/* ==========================================
+   COMMERCIAL BRUSH MOWER PAGE
+   ========================================== */
+
+.equipment-page-hero {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 12, 18, 0.82) 0%,
+      rgba(8, 12, 18, 0.45) 45%,
+      rgba(8, 12, 18, 0.2) 100%
+    ),
+    url("https://images.unsplash.com/photo-1519832978868-0c3e2f5e65cf?auto=format&fit=crop&w=1600&q=80");
+}
+
+.page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.equipment-detail-section {
+  padding: 4rem 0;
+}
+
+.equipment-spec-grid {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.equipment-spec-grid .equipment-photo {
+  background: #fff;
+  border-radius: 32px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 28px 60px rgba(21, 32, 43, 0.1);
+}
+
+.equipment-spec-grid .equipment-photo img {
+  border-radius: 32px;
+  object-fit: cover;
+}
+
+.before-rent-panel {
+  padding: 4rem 0;
+}
+
+.before-rent-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.before-rent-grid .info-panel {
+  padding: 1.75rem;
+}
+
+.faq-section {
+  padding: 4rem 0;
+}
+
+.faq-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.faq-list dt {
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.faq-list dd {
+  margin-left: 0;
+  color: var(--gray);
+  line-height: 1.75;
+}
+
+.page-footer-cta {
+  padding: 4rem 0 6rem;
+}
+
+.page-footer-cta .page-actions {
+  margin-top: 1.5rem;
+}
+
+.footer {
+  padding: 3rem 0 1.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  padding-bottom: 1.75rem;
+}
+
+@media (max-width: 960px) {
+  .equipment-spec-grid,
+  .before-rent-grid,
+  .page-actions,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .equipment-page-hero {
+    padding-bottom: 3rem;
+  }
+
+  .page-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-button,
+  .reserve-button {
+    width: 100%;
+  }
+}
+
