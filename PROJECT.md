@@ -53,6 +53,8 @@ Fast loading.
 
 Mobile first.
 
+Every page should help a customer rent equipment—not admire equipment.
+
 ---
 
 ## Visual Style
