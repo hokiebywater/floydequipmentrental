@@ -108,6 +108,173 @@
         </div>
       </section>
 
+      <section class="wishlist-section container" id="wishlist">
+        <div class="section-heading">
+          <p class="section-label">Community Wishlist</p>
+          <h2>Community Wishlist</h2>
+          <p class="section-intro">
+            We're always looking for ways to better serve Floyd County. Tell us
+            what equipment you'd like to see us add in the future. We review
+            every suggestion as we plan future purchases, but submitting a vote
+            does not guarantee that a particular machine will be added.
+          </p>
+        </div>
+
+        <div class="wishlist-panel">
+          <p class="wishlist-instructions">
+            Choose up to three pieces of equipment.
+          </p>
+
+          <div id="wishlist-form-container">
+            <form id="wishlist-form" class="wishlist-form">
+              <div class="checkbox-grid">
+                <label class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="wishlist-option"
+                    value="Mini Skid Steer"
+                  />
+                  <span>Mini Skid Steer</span>
+                </label>
+                <label class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="wishlist-option"
+                    value="Stump Grinder"
+                  />
+                  <span>Stump Grinder</span>
+                </label>
+                <label class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="wishlist-option"
+                    value="Wood Chipper"
+                  />
+                  <span>Wood Chipper</span>
+                </label>
+                <label class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="wishlist-option"
+                    value="Mini Excavator"
+                  />
+                  <span>Mini Excavator</span>
+                </label>
+                <label class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="wishlist-option"
+                    value="Plate Compactor"
+                  />
+                  <span>Plate Compactor</span>
+                </label>
+                <label class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="wishlist-option"
+                    value="Tow-Behind Auger"
+                  />
+                  <span>Tow-Behind Auger</span>
+                </label>
+                <label class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="wishlist-option"
+                    value="Log Splitter"
+                  />
+                  <span>Log Splitter</span>
+                </label>
+                <label class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="wishlist-option"
+                    value="Pressure Washer"
+                  />
+                  <span>Pressure Washer</span>
+                </label>
+                <label class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="wishlist-option"
+                    value="Generator"
+                  />
+                  <span>Generator</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="wishlist-option" value="Other" />
+                  <span>Other</span>
+                </label>
+              </div>
+
+              <div id="other-field" class="other-field hidden">
+                <label for="wishlist-other"
+                  >Tell us what other equipment you'd like:</label
+                >
+                <textarea
+                  id="wishlist-other"
+                  rows="3"
+                  placeholder="Describe another machine"
+                ></textarea>
+              </div>
+
+              <p id="wishlist-validation" class="validation-message hidden"></p>
+
+              <button class="hero-button" type="submit">Submit Wishlist</button>
+            </form>
+          </div>
+
+          <div id="wishlist-thank-you" class="thank-you-panel hidden">
+            <h3>Thank You!</h3>
+            <p>You've already shared your Community Wishlist.</p>
+            <p>
+              We appreciate your feedback and will continue reviewing community
+              suggestions as we decide what equipment to add in the future.
+            </p>
+            <p>
+              Check back anytime to see what other members of the Floyd County
+              community are interested in.
+            </p>
+          </div>
+
+          <div class="results-heading">
+            <h3>Current Community Interest</h3>
+            <p>
+              See what equipment other members of the Floyd County community
+              would most like to rent in the future.
+            </p>
+          </div>
+
+          <div id="wishlist-results" class="wishlist-results"></div>
+
+          <div class="email-card">
+            <h3>Stay in the Loop</h3>
+            <p>
+              Want to know when we add new equipment or publish helpful project
+              tips? Leave your email below and we'll occasionally send updates.
+              We respect your privacy and you can unsubscribe at any time.
+            </p>
+            <form class="email-form">
+              <div class="form-row">
+                <label for="newsletter-email">Email Address</label>
+                <input
+                  id="newsletter-email"
+                  type="email"
+                  placeholder="you@example.com"
+                />
+              </div>
+              <div class="form-row checkbox-row">
+                <input id="newsletter-optin" type="checkbox" />
+                <label for="newsletter-optin"
+                  >I'd like to receive occasional updates from Floyd Equipment
+                  Rental.</label
+                >
+              </div>
+              <button class="reserve-button" type="button">Notify Me</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
       <section class="why-rent-section container">
         <div class="section-heading">
           <p class="section-label">Why Choose Us</p>
@@ -213,5 +380,7 @@
         </p>
       </div>
     </footer>
+
+    <script type="module" src="js/community-wishlist.js"></script>
   </body>
 </html>
