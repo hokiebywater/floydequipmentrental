@@ -1,5 +1,34 @@
 # Changelog
 
+# Version 2.4
+
+**Date:** July 28, 2026
+
+## Added
+
+- Created a new About page featuring the story behind Floyd Equipment Rental.
+- Added a personal company introduction focused on the origins of the business and commitment to serving Floyd County.
+- Added a placeholder for a future family photo that will be replaced with an authentic image from the cabin.
+- Added a centered introductory statement reinforcing the company's mission.
+- Added a personalized closing with founder signature.
+
+## Improved
+
+- Refined the About page layout with a responsive two-column design.
+- Improved typography and reading width for better readability.
+- Enhanced the photo placeholder styling to better resemble a future photograph.
+- Tightened spacing throughout the page for improved visual balance.
+- Added reusable CSS classes to support future content pages.
+
+## Documentation
+
+- Continued refining the long-term website architecture and content strategy.
+- Established the About page as the company's origin story rather than a traditional corporate biography.
+
+## Overall
+
+Version 2.4 completes the foundational About page and further establishes Floyd Equipment Rental as a local, customer-focused business built around trust, education, and community. The website now includes a strong homepage and a polished About page, providing a solid foundation for future equipment pages and the Learning Center.
+
 ## Release 2.3 - Commercial Brush Mower Equipment Page
 
 ### Added
