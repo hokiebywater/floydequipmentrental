@@ -1,5 +1,39 @@
 # Changelog
 
+# Version 2.5
+
+**Date:** July 29, 2026
+
+## Added
+
+- Introduced the new **Community Wishlist** feature, allowing visitors to vote on equipment they would like Floyd Equipment Rental to add in the future.
+- Added anonymous voting powered by Supabase.
+- Created `community-wishlist.js` to manage voting, validation, and live results.
+- Created `supabase.js` to centralize Supabase configuration.
+- Added `SUPABASE_SETUP.md` documenting the database setup and configuration process.
+- Added a thank-you panel displayed immediately after voting and on future visits from the same browser.
+- Added a live "Current Community Interest" section displaying community voting results.
+- Added an optional email signup section for future customer updates.
+
+## Improved
+
+- Simplified the feature title to **Community Wishlist** for better readability.
+- Improved the thank-you experience with clearer messaging after a successful vote.
+- Refined spacing and layout throughout the Community Wishlist section.
+- Improved the empty-state message shown before any votes have been submitted.
+- Ensured the wishlist layout remains responsive on desktop and mobile devices.
+
+## Technical
+
+- Integrated the website with Supabase while keeping the remainder of the website static.
+- Implemented browser-based duplicate vote prevention using local storage.
+- Configured live vote retrieval from Supabase.
+- Added support for displaying community vote percentages.
+
+## Overall
+
+Version 2.5 introduces the website's first dynamic feature while preserving the speed and simplicity of a primarily static website. Visitors can now help shape future equipment purchases through the Community Wishlist, providing valuable community feedback as Floyd Equipment Rental grows.
+
 # Version 2.4
 
 **Date:** July 28, 2026
