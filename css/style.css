@@ -383,7 +383,9 @@ a {
   background: #f8f5f0;
   border: 1px solid rgba(23, 49, 38, 0.08);
   cursor: pointer;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
 
 .checkbox-option input {
@@ -730,6 +732,99 @@ a {
   margin-bottom: 0.9rem;
   font-size: 1.05rem;
   line-height: 1.6;
+}
+
+.card-badge {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(217, 107, 31, 0.12);
+  color: var(--orange);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-radius: 999px;
+}
+
+.card-badge.secondary {
+  margin-left: 0.5rem;
+  background: rgba(217, 107, 31, 0.08);
+}
+
+.featured-savings {
+  margin: 0.5rem 0 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.card-divider {
+  height: 1px;
+  width: 100%;
+  margin: 1rem 0 0;
+  background: rgba(21, 32, 43, 0.12);
+}
+
+.featured-description {
+  margin: 1rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--dark);
+}
+
+.muted-note {
+  margin: 1rem 0 0 0;
+  font-size: 0.94rem;
+  font-weight: 600;
+  line-height: 1.7;
+  color: rgba(21, 32, 43, 0.78);
+  display: flex;
+  align-items: center;
+}
+
+.helper-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+  color: rgba(21, 32, 43, 0.68);
+}
+
+.helper-icon svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.card-support {
+  margin: 1rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--dark);
+}
+
+.bullet-list {
+  list-style: disc inside;
+  padding-left: 1rem;
+  margin: 1rem 0 0;
+}
+
+.bullet-list li {
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.compact-card {
+  padding-bottom: 1.5rem;
+}
+
+.pricing-note {
+  background: rgba(217, 107, 31, 0.08);
+  padding: 1rem 1.15rem;
+  border-radius: 18px;
+  font-weight: 600;
+  margin-top: 1.75rem;
 }
 
 .why-grid {
@@ -1226,5 +1321,38 @@ a {
   .hero-button,
   .reserve-button {
     width: 100%;
+  }
+}
+.pricing-panel {
+  padding: 4rem 0;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.price {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--orange);
+  margin: 0.75rem 0;
+}
+
+.featured-price {
+  border: 2px solid var(--orange);
+  background: rgba(217, 107, 31, 0.06);
+  box-shadow: 0 24px 65px rgba(217, 107, 31, 0.16);
+  padding-bottom: 1.2rem;
+}
+
+@media (max-width: 960px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-price {
+    order: -1;
   }
 }
