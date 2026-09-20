@@ -1,42 +1,28 @@
 # Floyd Equipment Rental
 
-A modern, fast, SEO-friendly website for Floyd Equipment Rental, serving homeowners, farmers, contractors, and landowners throughout Floyd County, Virginia.
+Website for [Floyd Equipment Rental](https://floydequipmentrental.com), serving homeowners, farmers, and landowners in Floyd County, Virginia.
 
-## Mission
+## Run locally
 
-Help people tackle property improvement projects with dependable equipment, hands-on instruction, and honest local service.
+```bash
+python3 -m http.server 43147
+```
 
-## Features
+Then open [http://127.0.0.1:43147](http://127.0.0.1:43147).
 
-- Responsive design
-- Equipment showcase
-- Project Finder
-- Learning Center
-- Local SEO
-- Fleet request voting
-- Future online reservations
+## Photos
 
-## Tech Stack
+Original photos live in `assets/`:
 
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- Git
-- GitHub
+- `assets/equipment/commercial-brush-mower/` — the walk-behind brush mower and trailer
+- `assets/locations/` — Blue Ridge views around Floyd County
+- `assets/community/` — downtown Floyd and community landmarks
+- `assets/logo.png` — company mark
 
-## Project Status
+The homepage hero uses a Floyd County ridge photo. The brush mower page uses a photo of the actual machine.
 
-🚧 Active Development
+The rental business is not open yet. The site says coming soon and asks visitors to email floydequipmentrental@gmail.com for updates.
 
-## Roadmap
+## Tech
 
-- [ ] Home page
-- [ ] Equipment pages
-- [ ] Learning Center
-- [ ] Project Finder
-- [ ] Reservation system
-- [ ] Customer portal
-
-## Author
-
-Glenn
+Static HTML, CSS, and a little JavaScript. The Community Wishlist talks to Supabase. Deploy with the included `.cpanel.yml` to GoDaddy, or any static host.
