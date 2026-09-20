@@ -55,7 +55,7 @@ a {
       rgba(8, 12, 18, 0.45) 45%,
       rgba(8, 12, 18, 0.2) 100%
     ),
-    url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80");
+   ../assets/locations/floyd-blue-ridge-04.jpg
   background-size: cover;
   background-position: center;
   display: flex;
@@ -1107,7 +1107,7 @@ a {
       rgba(8, 12, 18, 0.45) 45%,
       rgba(8, 12, 18, 0.2) 100%
     ),
-    url("https://images.unsplash.com/photo-1519832978868-0c3e2f5e65cf?auto=format&fit=crop&w=1600&q=80");
+    ../assets/equipment/commercial-brush-mower/hero.jpg
 }
 
 .page-actions {
