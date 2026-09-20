@@ -55,7 +55,7 @@ a {
       rgba(8, 12, 18, 0.45) 45%,
       rgba(8, 12, 18, 0.2) 100%
     ),
-   ../assets/locations/floyd-blue-ridge-04.jpg
+   url("../assets/locations/floyd-blue-ridge-04.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -1107,7 +1107,7 @@ a {
       rgba(8, 12, 18, 0.45) 45%,
       rgba(8, 12, 18, 0.2) 100%
     ),
-    ../assets/equipment/commercial-brush-mower/hero.jpg
+    url("../assets/equipment/commercial-brush-mower/hero.jpg");
 }
 
 .page-actions {
