@@ -21,3 +21,7 @@ create policy "Allow anonymous mailing list inserts"
   for insert
   to anon
   with check (true);
+
+revoke all on table mailing_list from public;
+revoke all on table mailing_list from anon;
+grant insert on table mailing_list to anon;

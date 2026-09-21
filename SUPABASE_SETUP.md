@@ -148,7 +148,7 @@ That creates a `mailing_list` table with:
 - `source`: which form they used (`contact`, `wishlist`, or `reserve`)
 - `created_at`: when they signed up
 
-Row Level Security allows anonymous inserts only. Visitors cannot read, update, or delete other people's emails. View and export the list from **Table Editor → mailing_list** while logged into Supabase.
+Row Level Security allows anonymous inserts only. The SQL also grants `INSERT` to the `anon` role. Without that grant the form shows an error even if the table exists. Visitors cannot read, update, or delete other people's emails. View and export the list from **Table Editor → mailing_list** while logged into Supabase.
 
 If someone signs up twice with the same address, the unique index keeps one row and the site tells them they are already on the list.
 

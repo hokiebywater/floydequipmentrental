@@ -90,9 +90,17 @@ async function submitSignup(event) {
     showThanks(form);
   } catch (error) {
     console.error("Mailing list error:", error);
+    const setupIssue =
+      error?.code === "42501" ||
+      error?.code === "42P01" ||
+      /permission denied|does not exist|schema cache/i.test(
+        error?.message || "",
+      );
     setMessage(
       form,
-      "We could not add you right now. Email floydequipmentrental@gmail.com and we'll put you on the list.",
+      setupIssue
+        ? "The mailing list is still being set up. Email floydequipmentrental@gmail.com and we'll add you."
+        : "We could not add you right now. Email floydequipmentrental@gmail.com and we'll put you on the list.",
       "error",
     );
   } finally {

@@ -22,5 +22,9 @@ create policy "Allow anonymous mailing list inserts"
   to anon
   with check (true);
 
+revoke all on table mailing_list from public;
+revoke all on table mailing_list from anon;
+grant insert on table mailing_list to anon;
+
 alter view if exists public.community_wishlist_vote_totals
   set (security_invoker = on);
