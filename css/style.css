@@ -486,6 +486,10 @@ a {
   margin-top: 2rem;
 }
 
+#wishlist-thank-you + .results-heading {
+  margin-top: 2.25rem;
+}
+
 .results-heading h3 {
   margin: 0;
   font-size: 1.25rem;

@@ -11,7 +11,17 @@ const otherTextarea = document.getElementById('wishlist-other');
 const resultsContainer = document.getElementById('wishlist-results');
 const thankYouPanel = document.getElementById('wishlist-thank-you');
 const formContainer = document.getElementById('wishlist-form-container');
+const instructions = document.getElementById('wishlist-instructions');
+const resultsHeading = document.getElementById('wishlist-results-heading');
 const checkboxes = Array.from(document.querySelectorAll('input[name="wishlist-option"]'));
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
 
 function getSelectedOptions() {
   return checkboxes.filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.value);
@@ -51,7 +61,9 @@ async function fetchResults() {
     }
 
     if (!data || data.length === 0) {
-      resultsContainer.innerHTML = '<p>Be the first to help shape our Community Wishlist.</p>';
+      resultsContainer.innerHTML = userHasVoted()
+        ? '<p>Your vote is in. Results will show here as more people vote.</p>'
+        : '<p>Be the first to help shape our Community Wishlist.</p>';
       return;
     }
 
@@ -66,18 +78,22 @@ function renderResults(rows) {
   const totalVotes = rows.reduce((sum, row) => sum + Number(row.vote_count), 0);
 
   if (totalVotes === 0) {
-    resultsContainer.innerHTML = '<p>Be the first to help shape our Community Wishlist.</p>';
+    resultsContainer.innerHTML = userHasVoted()
+      ? '<p>Your vote is in. Results will show here as more people vote.</p>'
+      : '<p>Be the first to help shape our Community Wishlist.</p>';
     return;
   }
 
   const resultHtml = rows
     .map((row) => {
-      const percentage = Math.round((Number(row.vote_count) / totalVotes) * 100);
+      const count = Number(row.vote_count);
+      const percentage = Math.round((count / totalVotes) * 100);
+      const voteLabel = count === 1 ? '1 vote' : `${count} votes`;
       return `
         <div class="vote-item">
           <div class="vote-item-header">
-            <span class="vote-item-name">${row.equipment_name}</span>
-            <span class="vote-item-percent">${percentage}%</span>
+            <span class="vote-item-name">${escapeHtml(row.equipment_name)}</span>
+            <span class="vote-item-percent">${voteLabel} · ${percentage}%</span>
           </div>
           <div class="progress-track">
             <div class="progress-fill" style="width: ${percentage}%;"></div>
@@ -97,12 +113,20 @@ function updateOtherVisibility() {
 
 function setFormVisibility() {
   const form = document.getElementById('wishlist-form');
-  if (userHasVoted()) {
-    form.classList.add('hidden');
-    thankYouPanel.classList.remove('hidden');
-  } else {
-    form.classList.remove('hidden');
-    thankYouPanel.classList.add('hidden');
+  const hasVoted = userHasVoted();
+
+  form.classList.toggle('hidden', hasVoted);
+  formContainer.classList.toggle('hidden', hasVoted);
+  instructions.classList.toggle('hidden', hasVoted);
+  thankYouPanel.classList.toggle('hidden', !hasVoted);
+
+  if (resultsHeading) {
+    const headingCopy = resultsHeading.querySelector('p');
+    if (headingCopy) {
+      headingCopy.textContent = hasVoted
+        ? 'Here is how the community is voting so far. You can check back anytime, but you cannot vote again from this browser.'
+        : 'See what equipment other members of the Floyd County community would most like to rent in the future.';
+    }
   }
 }
 

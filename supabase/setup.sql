@@ -28,3 +28,15 @@ grant insert on table mailing_list to anon;
 
 alter view if exists public.community_wishlist_vote_totals
   set (security_invoker = on);
+
+alter table if exists public.equipment_votes enable row level security;
+
+drop policy if exists "Allow anonymous select" on public.equipment_votes;
+create policy "Allow anonymous select"
+  on public.equipment_votes
+  for select
+  to anon
+  using (true);
+
+grant select on table public.equipment_votes to anon;
+grant select on table public.community_wishlist_vote_totals to anon;
