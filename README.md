@@ -25,7 +25,7 @@ The rental business is not open yet. The site says coming soon and collects emai
 
 ## Mailing list
 
-Signups are stored in Supabase. After you run the SQL in `supabase/mailing_list.sql` once:
+Signups are stored in Supabase. If Advisors says the database is not usable, restore the project on the Supabase home page first. Then run the SQL in `supabase/setup.sql` once:
 
 1. Open [Supabase](https://supabase.com) and select the Floyd project.
 2. Go to **SQL Editor**, paste the file, and click **Run**.

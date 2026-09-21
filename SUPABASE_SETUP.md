@@ -132,9 +132,15 @@ Verify the Community Wishlist feature works as expected:
 - [ ] If Supabase is unavailable or an error occurs, a friendly error message displays:
   - "Community Wishlist results are temporarily unavailable."
 
+## Advisor warnings
+
+If Advisors says **Database not usable** / `ECONNREFUSED`, the project is paused or still starting. Open the project home page and click **Restore** (or wait if it already says restoring). Do not run SQL until Table Editor loads.
+
+If Advisors says **Security Definer View** for `community_wishlist_vote_totals`, run `supabase/setup.sql`. That view only shows vote counts, but it should use the visitor's permissions instead of the database owner's.
+
 ## Mailing List
 
-The website also collects emails for opening-day updates. Run `supabase/mailing_list.sql` once in the SQL Editor.
+The website also collects emails for opening-day updates. Run `supabase/setup.sql` once in the SQL Editor.
 
 That creates a `mailing_list` table with:
 
