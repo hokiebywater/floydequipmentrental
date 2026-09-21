@@ -47,18 +47,37 @@ function markUserVoted() {
   localStorage.setItem(STORAGE_KEY, 'true');
 }
 
+async function loadVoteTotals() {
+  const fromView = await supabase
+    .from(viewName)
+    .select('equipment_name, vote_count')
+    .order('vote_count', { ascending: false });
+
+  if (!fromView.error && fromView.data && fromView.data.length > 0) {
+    return fromView.data;
+  }
+
+  const fromTable = await supabase.from('equipment_votes').select('equipment_name');
+  if (fromTable.error) {
+    throw fromView.error || fromTable.error;
+  }
+
+  const counts = new Map();
+  for (const row of fromTable.data || []) {
+    const name = row.equipment_name || 'Other';
+    counts.set(name, (counts.get(name) || 0) + 1);
+  }
+
+  return Array.from(counts.entries())
+    .map(([equipment_name, vote_count]) => ({ equipment_name, vote_count }))
+    .sort((a, b) => b.vote_count - a.vote_count);
+}
+
 async function fetchResults() {
   resultsContainer.innerHTML = '<p>Loading community wishlist results...</p>';
 
   try {
-    const { data, error } = await supabase
-      .from(viewName)
-      .select('equipment_name, vote_count')
-      .order('vote_count', { ascending: false });
-
-    if (error) {
-      throw error;
-    }
+    const data = await loadVoteTotals();
 
     if (!data || data.length === 0) {
       resultsContainer.innerHTML = userHasVoted()

@@ -26,10 +26,20 @@ revoke all on table mailing_list from public;
 revoke all on table mailing_list from anon;
 grant insert on table mailing_list to anon;
 
-alter view if exists public.community_wishlist_vote_totals
-  set (security_invoker = on);
+create table if not exists public.equipment_votes (
+  id uuid primary key default gen_random_uuid(),
+  equipment_name text not null,
+  created_at timestamptz not null default now()
+);
 
-alter table if exists public.equipment_votes enable row level security;
+alter table public.equipment_votes enable row level security;
+
+drop policy if exists "Allow anonymous inserts" on public.equipment_votes;
+create policy "Allow anonymous inserts"
+  on public.equipment_votes
+  for insert
+  to anon
+  with check (true);
 
 drop policy if exists "Allow anonymous select" on public.equipment_votes;
 create policy "Allow anonymous select"
@@ -38,5 +48,16 @@ create policy "Allow anonymous select"
   to anon
   using (true);
 
-grant select on table public.equipment_votes to anon;
+revoke all on table public.equipment_votes from public;
+revoke all on table public.equipment_votes from anon;
+grant insert, select on table public.equipment_votes to anon;
+
+create or replace view public.community_wishlist_vote_totals
+with (security_invoker = on) as
+select
+  equipment_name,
+  count(*)::bigint as vote_count
+from public.equipment_votes
+group by equipment_name;
+
 grant select on table public.community_wishlist_vote_totals to anon;
