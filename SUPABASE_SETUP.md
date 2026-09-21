@@ -132,11 +132,24 @@ Verify the Community Wishlist feature works as expected:
 - [ ] If Supabase is unavailable or an error occurs, a friendly error message displays:
   - "Community Wishlist results are temporarily unavailable."
 
+## Mailing List
+
+The website also collects emails for opening-day updates. Run `supabase/mailing_list.sql` once in the SQL Editor.
+
+That creates a `mailing_list` table with:
+
+- `email`: the visitor's address, stored in lowercase
+- `source`: which form they used (`contact`, `wishlist`, or `reserve`)
+- `created_at`: when they signed up
+
+Row Level Security allows anonymous inserts only. Visitors cannot read, update, or delete other people's emails. View and export the list from **Table Editor → mailing_list** while logged into Supabase.
+
+If someone signs up twice with the same address, the unique index keeps one row and the site tells them they are already on the list.
+
 ## Future Improvements
 
 Possible future enhancements for the Community Wishlist feature:
 
-- Email signup integration to collect visitor updates.
 - Admin dashboard to review wishlist votes and manage equipment ideas.
 - Vote analytics for tracking popular equipment over time.
 - Duplicate vote prevention across devices or browsers.

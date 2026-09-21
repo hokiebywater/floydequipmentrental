@@ -205,11 +205,14 @@ a {
   display: inline-block;
   width: max-content;
   padding: 1rem 1.5rem;
+  border: 0;
   border-radius: 999px;
   background: var(--orange);
   color: var(--white);
+  font: inherit;
   font-weight: 700;
   letter-spacing: 0.02em;
+  cursor: pointer;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
   transition:
     transform 0.2s ease,
@@ -505,6 +508,35 @@ a {
 
 .validation-message {
   color: #b85718;
+}
+
+.validation-message.is-success {
+  color: var(--green);
+}
+
+.email-form button[disabled] {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.contact-fallback {
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.contact-panel .email-form,
+.info-panel .email-form,
+.contact-panel .thank-you-panel,
+.info-panel .thank-you-panel {
+  text-align: left;
+  max-width: 28rem;
+  margin: 1.5rem auto 0;
+}
+
+.contact-panel .email-form .hero-button,
+.info-panel .email-form .hero-button {
+  margin-top: 0;
+  width: 100%;
 }
 
 .wishlist-summary {
@@ -926,8 +958,9 @@ a {
   text-align: center;
 }
 
-.contact-panel .hero-button {
-  margin-top: 1.5rem;
+.contact-panel .hero-button,
+.contact-panel .email-form .hero-button {
+  margin-top: 0.25rem;
 }
 
 .site-footer {

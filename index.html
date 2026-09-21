@@ -20,9 +20,7 @@
   <body>
     <p class="launch-banner">
       Floyd Equipment Rental is coming soon.
-      <a href="mailto:floydequipmentrental@gmail.com"
-        >Email floydequipmentrental@gmail.com</a
-      >
+      <a href="#contact">Join the mailing list</a>
       and we'll let you know when we open.
     </p>
     <header class="hero" id="home">
@@ -41,9 +39,7 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <a class="reserve-button" href="mailto:floydequipmentrental@gmail.com"
-          >Get Updates</a
-        >
+        <a class="reserve-button" href="#contact">Get Updates</a>
       </nav>
 
       <div class="hero-content container">
@@ -54,9 +50,7 @@
           projects without spending thousands on equipment you'll only use a few
           times a year.
         </p>
-        <a class="hero-button" href="mailto:floydequipmentrental@gmail.com"
-          >Get Updates</a
-        >
+        <a class="hero-button" href="#contact">Get Updates</a>
       </div>
 
       <div class="trust-strip container" aria-label="Service trust highlights">
@@ -113,11 +107,7 @@
                 <a class="hero-button" href="commercial-brush-mower.html"
                   >View Details</a
                 >
-                <a
-                  class="reserve-button"
-                  href="mailto:floydequipmentrental@gmail.com"
-                  >Get Updates</a
-                >
+                <a class="reserve-button" href="#contact">Get Updates</a>
               </div>
             </div>
           </article>
@@ -265,28 +255,50 @@
           <div class="email-card">
             <h3>Stay in the Loop</h3>
             <p>
-              Want to know when we add new equipment or publish helpful project
-              tips? Leave your email below and we'll occasionally send updates.
-              We respect your privacy and you can unsubscribe at any time.
+              Leave your email and we'll tell you when we open, plus the
+              occasional note about new equipment. We will not sell your
+              address, and you can unsubscribe at any time.
             </p>
-            <form class="email-form">
+            <form
+              class="email-form mailing-list-form"
+              data-source="wishlist"
+              novalidate
+            >
               <div class="form-row">
                 <label for="newsletter-email">Email Address</label>
                 <input
                   id="newsletter-email"
+                  name="email"
                   type="email"
+                  autocomplete="email"
                   placeholder="you@example.com"
+                  required
                 />
               </div>
               <div class="form-row checkbox-row">
-                <input id="newsletter-optin" type="checkbox" />
+                <input id="newsletter-optin" name="optin" type="checkbox" required />
                 <label for="newsletter-optin"
-                  >I'd like to receive occasional updates from Floyd Equipment
-                  Rental.</label
+                  >Email me when Floyd Equipment Rental opens, plus occasional
+                  updates.</label
                 >
               </div>
-              <button class="reserve-button" type="button">Notify Me</button>
+              <p
+                class="validation-message hidden"
+                data-mailing-message
+                role="status"
+                aria-live="polite"
+              ></p>
+              <button class="reserve-button" type="submit">
+                Join the Mailing List
+              </button>
             </form>
+            <div class="thank-you-panel hidden" data-mailing-thanks>
+              <h3>You're on the list</h3>
+              <p>
+                We'll email you when Floyd Equipment Rental opens. You can
+                unsubscribe from any message we send.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -356,16 +368,55 @@
           <p class="section-label">Opening Soon</p>
           <h2>Be the first to know when we open.</h2>
           <p>
-            We're not taking rentals yet. Email us and we'll notify you when
-            Floyd Equipment Rental is open for business.
+            We're not taking rentals yet. Join the mailing list and we'll email
+            you when Floyd Equipment Rental is open for business.
           </p>
-          <div class="contact-actions">
-            <a
-              class="hero-button"
-              href="mailto:floydequipmentrental@gmail.com"
-              >Email floydequipmentrental@gmail.com</a
-            >
+          <form
+            class="email-form mailing-list-form"
+            data-source="contact"
+            novalidate
+          >
+            <div class="form-row">
+              <label for="contact-email">Email Address</label>
+              <input
+                id="contact-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div class="form-row checkbox-row">
+              <input id="contact-optin" name="optin" type="checkbox" required />
+              <label for="contact-optin"
+                >Email me when Floyd Equipment Rental opens, plus occasional
+                updates.</label
+              >
+            </div>
+            <p
+              class="validation-message hidden"
+              data-mailing-message
+              role="status"
+              aria-live="polite"
+            ></p>
+            <button class="hero-button" type="submit">
+              Join the Mailing List
+            </button>
+          </form>
+          <div class="thank-you-panel hidden" data-mailing-thanks>
+            <h3>You're on the list</h3>
+            <p>
+              We'll email you when we open. You can unsubscribe from any
+              message we send.
+            </p>
           </div>
+          <p class="contact-fallback">
+            Prefer to write us?
+            <a href="mailto:floydequipmentrental@gmail.com"
+              >floydequipmentrental@gmail.com</a
+            >
+          </p>
         </div>
       </section>
     </main>
@@ -414,5 +465,6 @@
     </footer>
 
     <script type="module" src="js/community-wishlist.js"></script>
+    <script type="module" src="js/mailing-list.js"></script>
   </body>
 </html>

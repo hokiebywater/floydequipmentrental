@@ -23,9 +23,7 @@
   <body>
     <p class="launch-banner">
       Floyd Equipment Rental is coming soon.
-      <a href="mailto:floydequipmentrental@gmail.com"
-        >Email floydequipmentrental@gmail.com</a
-      >
+      <a href="#signup">Join the mailing list</a>
       and we'll let you know when we open.
     </p>
 
@@ -45,9 +43,7 @@
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
 
-        <a class="reserve-button" href="mailto:floydequipmentrental@gmail.com"
-          >Get Updates</a
-        >
+        <a class="reserve-button" href="#signup">Get Updates</a>
       </nav>
     </header>
 
@@ -60,21 +56,60 @@
         </p>
       </section>
 
-      <section class="info-section container">
+      <section class="info-section container" id="signup">
         <div class="info-panel">
           <p class="section-label">Get Updates</p>
           <h2>We'll tell you when we open</h2>
           <p>
             We're getting equipment ready for homeowners and landowners in Floyd
-            County. Email us if you want a note when rentals begin.
+            County. Join the mailing list if you want a note when rentals begin.
           </p>
-          <div class="contact-actions">
-            <a
-              class="hero-button"
-              href="mailto:floydequipmentrental@gmail.com"
-              >Email floydequipmentrental@gmail.com</a
-            >
+          <form
+            class="email-form mailing-list-form"
+            data-source="reserve"
+            novalidate
+          >
+            <div class="form-row">
+              <label for="reserve-email">Email Address</label>
+              <input
+                id="reserve-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div class="form-row checkbox-row">
+              <input id="reserve-optin" name="optin" type="checkbox" required />
+              <label for="reserve-optin"
+                >Email me when Floyd Equipment Rental opens, plus occasional
+                updates.</label
+              >
+            </div>
+            <p
+              class="validation-message hidden"
+              data-mailing-message
+              role="status"
+              aria-live="polite"
+            ></p>
+            <button class="hero-button" type="submit">
+              Join the Mailing List
+            </button>
+          </form>
+          <div class="thank-you-panel hidden" data-mailing-thanks>
+            <h3>You're on the list</h3>
+            <p>
+              We'll email you when we open. You can unsubscribe from any
+              message we send.
+            </p>
           </div>
+          <p class="contact-fallback">
+            Prefer to write us?
+            <a href="mailto:floydequipmentrental@gmail.com"
+              >floydequipmentrental@gmail.com</a
+            >
+          </p>
         </div>
       </section>
     </main>
@@ -121,5 +156,6 @@
         </p>
       </div>
     </footer>
+    <script type="module" src="js/mailing-list.js"></script>
   </body>
 </html>
